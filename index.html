@@ -6,327 +6,496 @@
     <title>Saath Campaign — Together For Education</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Injecting the exact color theme from saath color .jpeg verbatim
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
                     },
                     colors: {
-                        spaceCadet: '#25344F',
-                        slateGray: '#617891',
-                        themeTan: '#D5B893',
-                        themeCoffee: '#6F4D38',
-                        caputMortuum: '#632024',
+                        brandSpaceCadet: '#25344F',  // Deep Obsidian Blue
+                        brandSlateGray: '#617891',   // Muted Professional Slate
+                        brandTan: '#D5B893',         // Elegant Warm Accent
+                        brandCoffee: '#6F4D38',      // Grounded Earthy Tone
+                        brandCaput: '#632024',       // Rich Deep Burgundy
+                        brandCream: '#F9F6F0',       // Rich Premium Cream Background
+                        brandCreamCard: '#F2EDE2',   // Slightly Darker Cream for structural depth
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 40px -10px rgba(111, 77, 56, 0.08)',
+                        'glow': '0 0 60px rgba(213, 184, 147, 0.15)',
+                    },
+                    animation: {
+                        'logoPop': 'logoPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                    },
+                    keyframes: {
+                        logoPop: {
+                            '0%': { transform: 'scale(0.96); opacity: 0;' },
+                            '100%': { transform: 'scale(1); opacity: 1;' }
+                        }
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
-<body class="min-h-screen bg-amber-50/40 text-spaceCadet font-sans antialiased selection:bg-themeTan selection:text-spaceCadet flex flex-col">
-
-    <div class="w-full h-[265px] bg-spaceCadet relative border-b-4 border-themeTan flex items-center justify-center overflow-hidden">
-        <div class="w-full h-full max-w-7xl mx-auto px-4 flex items-center justify-center">
-            <img src="image_0.png" alt="Saath Core Group and Volunteers Network Banner" class="max-w-full max-h-full h-[265px] object-contain filter saturate-[0.9] hover:saturate-100 transition-all duration-700 block">
-        </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-spaceCadet/20 via-transparent to-black/10 pointer-events-none"></div>
-    </div>
-
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slateGray/20 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 md:px-8 h-28 md:h-36 flex items-center justify-between gap-4">
-            
-            <div onclick="navigateToPage('about')" class="flex items-center gap-3 md:gap-4 shrink-0 cursor-pointer">
-                <div class="h-11 w-11 md:h-14 md:w-14 bg-gradient-to-tr from-spaceCadet to-themeCoffee rounded-xl flex items-center justify-center text-themeTan font-bold text-2xl md:text-3xl shadow-md shrink-0">
-                    S
-                </div>
-                <div>
-                    <span class="text-2xl md:text-3xl font-black tracking-tight text-spaceCadet block leading-none">Saath</span>
-                    <span class="block text-[10px] uppercase tracking-widest text-slateGray font-bold mt-1">Together For Education</span>
-                </div>
-            </div>
-            
-            <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm xl:text-base font-semibold text-slateGray tracking-wide">
-                <button onclick="navigateToPage('about')" id="nav-about" class="nav-link text-caputMortuum transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-caputMortuum after:transition-all">Home / About</button>
-                <button onclick="navigateToPage('curriculum')" id="nav-curriculum" class="nav-link hover:text-caputMortuum transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-caputMortuum hover:after:w-full after:transition-all">Our Subjects</button>
-                <button onclick="navigateToPage('impact')" id="nav-impact" class="nav-link hover:text-caputMortuum transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-caputMortuum hover:after:w-full after:transition-all">Impact Data</button>
-                <button onclick="navigateToPage('docs')" id="nav-docs" class="nav-link hover:text-caputMortuum transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-caputMortuum hover:after:w-full after:transition-all">Documentation</button>
-                <button onclick="navigateToPage('vision')" id="nav-vision" class="nav-link hover:text-caputMortuum transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-caputMortuum hover:after:w-full after:transition-all">Vision</button>
-            </nav>
-
-            <div class="flex items-center justify-end shrink-0 h-20 w-44 md:h-28 md:w-64">
-                <img src="image_bcad84.png" alt="Saath Logo" class="h-full w-full object-contain object-right">
-            </div>
-            
-        </div>
-    </header>
-
-    <main class="flex-grow">
-        
-        <div id="page-about" class="page-view container-view">
-            <section class="max-w-4xl mx-auto px-8 pt-24 pb-32 text-center space-y-8">
-                <div class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold bg-themeTan/20 text-themeCoffee border border-themeTan/40 mx-auto">
-                    <span class="h-2.5 w-2.5 rounded-full bg-caputMortuum animate-pulse"></span> Ground-level Campaign Live
-                </div>
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-spaceCadet leading-[1.1] max-w-3xl mx-auto">
-                    Bridging gaps, building futures—<span class="underline decoration-themeTan decoration-wavy decoration-2">together.</span>
-                </h1>
-                <p class="text-xl text-slateGray leading-relaxed max-w-2xl mx-auto">
-                    Education shouldn't be a luxury dictated by circumstances. <strong>Saath</strong> is an agile educational movement dedicated to teaching poor and underprivileged sectors, opening doorways to new livelihoods.
-                </p>
-                <div class="flex flex-wrap justify-center gap-5 pt-4">
-                    <button onclick="navigateToPage('curriculum')" class="bg-spaceCadet hover:bg-themeCoffee text-themeTan px-8 py-4 rounded-xl font-bold shadow-xl transition-all text-center text-lg">
-                        View Course Tracks
-                    </button>
-                    <button onclick="navigateToPage('docs')" class="border border-slateGray/30 hover:bg-themeTan/10 bg-white text-spaceCadet px-8 py-4 rounded-xl font-bold transition-all text-center text-lg">
-                        Transparency Reports
-                    </button>
-                </div>
-            </section>
-        </div>
-
-        <div id="page-curriculum" class="page-view container-view hidden">
-            <section class="bg-white border-y border-slateGray/10 py-28">
-                <div class="max-w-7xl mx-auto px-8">
-                    <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                        <h2 class="text-4xl font-bold tracking-tight text-spaceCadet">The Subjects We Teach</h2>
-                        <p class="text-slateGray text-base">Targeted modules optimized specifically for community acceleration, digital competence, and sustainable survival literacy.</p>
-                        
-                        <div class="inline-flex bg-amber-50/60 p-1.5 rounded-xl mt-6 border border-themeTan/30">
-                            <button onclick="filterCurriculum('all')" id="btn-all" class="tab-btn px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded-lg transition-all bg-spaceCadet text-themeTan shadow-sm">
-                                All Classes
-                            </button>
-                            <button onclick="filterCurriculum('academic')" id="btn-academic" class="tab-btn px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded-lg transition-all text-slateGray hover:text-spaceCadet">
-                                Academic Foundations
-                            </button>
-                            <button onclick="filterCurriculum('practical')" id="btn-practical" class="tab-btn px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded-lg transition-all text-slateGray hover:text-spaceCadet">
-                                Practical Modern Skills
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8" id="subject-grid">
-                        <div class="subject-card p-8 rounded-2xl bg-amber-50/20 border border-themeTan/10 hover:border-themeTan hover:bg-white transition-all hover:shadow-2xl group" data-category="academic">
-                            <div class="text-4xl mb-5 p-4 bg-white group-hover:bg-themeTan/20 rounded-xl inline-block shadow-sm transition-all border border-slateGray/10">✍️</div>
-                            <h3 class="text-xl font-bold text-spaceCadet mb-3">Foundational Literacy</h3>
-                            <p class="text-sm text-slateGray leading-relaxed">Basic reading systems, writing architecture, and everyday functional math calculations.</p>
-                        </div>
-                        <div class="subject-card p-8 rounded-2xl bg-amber-50/20 border border-themeTan/10 hover:border-themeTan hover:bg-white transition-all hover:shadow-2xl group" data-category="academic">
-                            <div class="text-4xl mb-5 p-4 bg-white group-hover:bg-themeTan/20 rounded-xl inline-block shadow-sm transition-all border border-slateGray/10">🗣️</div>
-                            <h3 class="text-xl font-bold text-spaceCadet mb-3">English Communication</h3>
-                            <p class="text-sm text-slateGray leading-relaxed">Conversational language routines to boost baseline workspace confidence and clear standard interviews.</p>
-                        </div>
-                        <div class="subject-card p-8 rounded-2xl bg-amber-50/20 border border-themeTan/10 hover:border-themeTan hover:bg-white transition-all hover:shadow-2xl group" data-category="practical">
-                            <div class="text-4xl mb-5 p-4 bg-white group-hover:bg-themeTan/20 rounded-xl inline-block shadow-sm transition-all border border-slateGray/10">💻</div>
-                            <h3 class="text-xl font-bold text-spaceCadet mb-3">Digital Literacy</h3>
-                            <p class="text-sm text-slateGray leading-relaxed">Computer hardware basics, keyboard confidence, safe internet web search usage, and text tools.</p>
-                        </div>
-                        <div class="subject-card p-8 rounded-2xl bg-amber-50/20 border border-themeTan/10 hover:border-themeTan hover:bg-white transition-all hover:shadow-2xl group" data-category="practical">
-                            <div class="text-4xl mb-5 p-4 bg-white group-hover:bg-themeTan/20 rounded-xl inline-block shadow-sm transition-all border border-slateGray/10">🪙</div>
-                            <h3 class="text-xl font-bold text-spaceCadet mb-3">Life & Financial Skills</h3>
-                            <p class="text-sm text-slateGray leading-relaxed">Basic microbanking systems, identity safety protection, sanitation fundamentals, and structural legal awareness.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div id="page-impact" class="page-view container-view hidden">
-            <section class="max-w-7xl mx-auto px-8 py-28">
-                <div class="grid md:grid-cols-12 gap-16 items-center">
-                    <div class="md:col-span-5 space-y-6">
-                        <h2 class="text-4xl font-bold tracking-tight text-spaceCadet">Our Impact Metrics</h2>
-                        <p class="text-slateGray leading-relaxed text-base">
-                            Empirical performance indicators showing real campaign progress. Our team closely documents attendance trends and career transitions over multiple quarters.
-                        </p>
-                        <div class="space-y-5 pt-2">
-                            <div class="flex items-center gap-5 bg-white p-5 rounded-xl border border-themeTan/30 shadow-sm">
-                                <span class="text-3xl font-black text-caputMortuum">92%</span>
-                                <p class="text-xs text-slateGray"><strong class="text-spaceCadet block text-base">Retention Rate</strong> Kept optimal through strict follow-ups and family resource tracking.</p>
-                            </div>
-                            <div class="flex items-center gap-5 bg-white p-5 rounded-xl border border-themeTan/30 shadow-sm">
-                                <span class="text-3xl font-black text-themeCoffee">1,200+</span>
-                                <p class="text-xs text-slateGray"><strong class="text-spaceCadet block text-base">Active Enrolled Minds</strong> Receiving targeted instructional sessions spanning several regions.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="md:col-span-7 bg-white border border-themeTan/20 rounded-3xl p-8 shadow-2xl space-y-8">
-                        <div>
-                            <h3 class="text-base font-bold text-spaceCadet uppercase tracking-wider">Annual Enrolled Learner Scaling</h3>
-                            <p class="text-xs text-slateGray">Total batch expansion benchmarks across chronological verification years.</p>
-                        </div>
-                        
-                        <div class="space-y-6">
-                            <div class="space-y-1.5">
-                                <div class="flex justify-between text-xs font-semibold text-slateGray">
-                                    <span>2024 (Inception Baseline)</span>
-                                    <span class="font-bold text-spaceCadet">120 Students</span>
-                                </div>
-                                <div class="w-full bg-amber-50 h-5 rounded-lg overflow-hidden border border-themeTan/20">
-                                    <div class="bg-themeTan h-full rounded-lg" style="width: 10%"></div>
-                                </div>
-                            </div>
-                            <div class="space-y-1.5">
-                                <div class="flex justify-between text-xs font-semibold text-slateGray">
-                                    <span>2025 (Regional Spreading)</span>
-                                    <span class="font-bold text-spaceCadet">450 Students</span>
-                                </div>
-                                <div class="w-full bg-amber-50 h-5 rounded-lg overflow-hidden border border-themeTan/20">
-                                    <div class="bg-slateGray h-full rounded-lg" style="width: 37.5%"></div>
-                                </div>
-                            </div>
-                            <div class="space-y-1.5">
-                                <div class="flex justify-between text-xs font-bold text-spaceCadet">
-                                    <span>2026 (Current Active Scope)</span>
-                                    <span class="font-extrabold text-caputMortuum">1,200+ Students</span>
-                                </div>
-                                <div class="w-full bg-amber-50 h-5 rounded-lg overflow-hidden border border-themeTan/20">
-                                    <div class="bg-gradient-to-r from-spaceCadet via-themeCoffee to-caputMortuum h-full rounded-lg" style="width: 100%"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="pt-6 border-t border-themeTan/20 grid grid-cols-3 text-center gap-4">
-                            <div>
-                                <p class="text-2xl font-black text-spaceCadet">45%</p>
-                                <p class="text-xs uppercase text-slateGray font-bold">Mainstream Academy</p>
-                            </div>
-                            <div>
-                                <p class="text-2xl font-black text-spaceCadet">35%</p>
-                                <p class="text-xs uppercase text-slateGray font-bold">Digital Track</p>
-                            </div>
-                            <div>
-                                <p class="text-2xl font-black text-spaceCadet">20%</p>
-                                <p class="text-xs uppercase text-slateGray font-bold">Vocational Placed</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div id="page-docs" class="page-view container-view hidden">
-            <section class="bg-spaceCadet text-white py-28">
-                <div class="max-w-7xl mx-auto px-8">
-                    <div class="max-w-2xl space-y-4 mb-16">
-                        <span class="text-xs font-bold tracking-widest text-themeTan uppercase">Compliance Registry</span>
-                        <h2 class="text-4xl font-bold tracking-tight text-white">Documentation Transparency</h2>
-                        <p class="text-themeTan/70 text-base">Access official legal papers, operational framework guides, and micro-audits open for public validation.</p>
-                    </div>
-
-                    <div class="grid sm:grid-cols-3 gap-8">
-                        <div class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:border-themeTan/40 transition-all flex flex-col justify-between group">
-                            <div class="space-y-4">
-                                <span class="inline-block text-[10px] font-bold text-themeTan bg-themeTan/10 px-3 py-1.5 rounded-md uppercase tracking-wider">PDF Manifest</span>
-                                <h3 class="font-bold text-white text-xl">Registration Credential</h3>
-                                <p class="text-sm text-themeTan/60 leading-relaxed">Official operational trust certificates and community campaign authority allowances.</p>
-                            </div>
-                            <a href="#" class="text-sm font-semibold text-themeTan hover:text-white mt-8 inline-flex items-center gap-1 transition-transform group-hover:translate-x-1">
-                                Download Documents &rarr;
-                            </a>
-                        </div>
-
-                        <div class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:border-themeTan/40 transition-all flex flex-col justify-between group">
-                            <div class="space-y-4">
-                                <span class="inline-block text-[10px] font-bold text-themeTan bg-themeTan/10 px-3 py-1.5 rounded-md uppercase tracking-wider">Financial Log</span>
-                                <h3 class="font-bold text-white text-xl">Annual Expense Reports</h3>
-                                <p class="text-sm text-themeTan/60 leading-relaxed">Itemized resource distribution data outlining instructional materials spending pipelines.</p>
-                            </div>
-                            <a href="#" class="text-sm font-semibold text-themeTan hover:text-white mt-8 inline-flex items-center gap-1 transition-transform group-hover:translate-x-1">
-                                Open Archive Link &rarr;
-                            </a>
-                        </div>
-
-                        <div class="bg-white/5 border border-white/10 p-8 rounded-2xl hover:border-themeTan/40 transition-all flex flex-col justify-between group">
-                            <div class="space-y-4">
-                                <span class="inline-block text-[10px] font-bold text-themeTan bg-themeTan/10 px-3 py-1.5 rounded-md uppercase tracking-wider">Syllabus Framework</span>
-                                <h3 class="font-bold text-white text-xl">Teaching Modules</h3>
-                                <p class="text-sm text-themeTan/60 leading-relaxed">Open learning flowcharts, timelines, and study material sets used by our volunteer corps.</p>
-                            </div>
-                            <a href="#" class="text-sm font-semibold text-themeTan hover:text-white mt-8 inline-flex items-center gap-1 transition-transform group-hover:translate-x-1">
-                                Review Blueprints &rarr;
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div id="page-vision" class="page-view container-view hidden">
-            <section class="max-w-5xl mx-auto px-8 py-28 text-center">
-                <div class="inline-flex items-center justify-center h-14 w-14 rounded-full bg-themeTan/20 text-caputMortuum text-4xl font-serif mb-6 shadow-sm select-none">
-                    “
-                </div>
-                <blockquote class="text-xl md:text-3xl font-medium text-spaceCadet italic leading-relaxed max-w-4xl mx-auto">
-                    "Education is the ultimate equalizer. When we teach an underserved community, we aren't just giving them facts; we are giving them agency, choice, and a self-sufficient voice. Saath was born out of the core structural belief that talent is distributed evenly, but opportunity is not."
-                </blockquote>
-                <div class="mt-8 space-y-1">
-                    <p class="font-bold text-spaceCadet text-lg">The Executive Board</p>
-                    <p class="text-xs uppercase tracking-widest text-slateGray font-bold">Saath Campaign Authority Group</p>
-                </div>
-            </section>
-        </div>
-
-    </main>
-
-    <footer class="border-t border-themeTan/20 bg-amber-50/60 py-10 text-center text-xs text-slateGray font-bold tracking-wide">
-        &copy; 2026 Saath Campaign Initiative · Accessible Learning Foundations.
-    </footer>
-
-    <script>
-        // SPA Page Router function
-        function navigateToPage(pageId) {
-            // Hide all page components
-            const pages = document.querySelectorAll('.page-view');
-            pages.forEach(page => {
-                page.classList.add('hidden');
-            });
-
-            // Reveal targeted view
-            const activePage = document.getElementById(`page-${pageId}`);
-            if(activePage) {
-                activePage.classList.remove('hidden');
-            }
-
-            // Reset navigation link visual underline designs
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.className = "nav-link hover:text-caputMortuum transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-caputMortuum hover:after:w-full after:transition-all";
-            });
-
-            // Highlight the selected path link actively
-            const activeLink = document.getElementById(`nav-${pageId}`);
-            if(activeLink) {
-                activeLink.className = "nav-link text-caputMortuum transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-caputMortuum after:transition-all";
-            }
-
-            // Instantly viewport switch directly to top of page context
-            window.scrollTo({ top: 0, behavior: 'instant' });
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800&family=Inter:wght=400;500&display=swap" rel="stylesheet">
+    <style>
+        .hero-pattern {
+            background-color: #F9F6F0;
+            background-image: radial-gradient(at 100% 0%, rgba(213, 184, 147, 0.25) 0px, transparent 60%), radial-gradient(at 0% 100%, rgba(111, 77, 56, 0.1) 0px, transparent 60%);
+        }
+        .nav-panel-active {
+            background-color: #D5B893 !important;
+            color: #25344F !important;
+            border-color: #6F4D38 !important;
+            box-shadow: 0 4px 12px -2px rgba(111, 77, 56, 0.15) !important;
         }
 
-        // Internal category filters for the Subjects sub-menu
-        function filterCurriculum(category) {
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => {
-                btn.className = "tab-btn px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded-lg transition-all text-slateGray hover:text-spaceCadet";
-            });
+        /* Fullscreen Overlay Mask styling */
+        #splash-overlay {
+            will-change: opacity, background-color, backdrop-filter;
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                        background-color 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                        backdrop-filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-            const currentBtn = document.getElementById(`btn-${category}`);
-            if(currentBtn) {
-                currentBtn.className = "tab-btn px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded-lg transition-all bg-spaceCadet text-themeTan shadow-sm";
+        /* Fly-away transition setup applied to the original container during dismissal */
+        #splash-container {
+            will-change: transform, top, left, width, height, opacity;
+            transition: transform 0.95s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        top 0.95s cubic-bezier(0.25, 1, 0.5, 1),
+                        left 0.95s cubic-bezier(0.25, 1, 0.5, 1),
+                        width 0.95s cubic-bezier(0.25, 1, 0.5, 1),
+                        height 0.95s cubic-bezier(0.25, 1, 0.5, 1),
+                        opacity 0.85s ease-out;
+            transform-origin: top left;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-brandCream text-brandSpaceCadet font-sans antialiased selection:bg-brandTan/40 flex flex-col overflow-hidden text-lg">
+
+    <div id="splash-overlay" onclick="dismissSplash(event)" class="fixed inset-0 z-[100] bg-brandSpaceCadet flex items-center justify-center cursor-pointer select-none p-3 sm:p-6">
+        
+        <div id="ring-1" class="absolute h-[60vw] w-[60vw] rounded-full border border-brandTan/10 scale-100 opacity-100 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) pointer-events-none"></div>
+        <div id="ring-2" class="absolute h-[45vw] w-[45vw] rounded-full border border-brandCoffee/20 scale-100 opacity-80 transition-all duration-700 cubic-bezier(0.16, 1, 0.3, 1) pointer-events-none"></div>
+
+        <div id="splash-container" class="absolute border border-brandTan/20 rounded-[2rem] bg-[#F4EFE6] flex flex-col items-center justify-center p-6 shadow-glow overflow-hidden animate-logoPop">
+            
+            <div id="splash-logo-wrapper" class="w-full h-full flex items-center justify-center transition-transform duration-500 hover:scale-[1.01]">
+                <img src="image_bcad84.png" alt="Saath Campaign Logo Display Frame" class="w-full h-full object-contain filter contrast-[1.01]">
+            </div>
+
+            <div id="splash-cue" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-center pointer-events-none space-y-2 transition-all duration-300">
+                <p class="text-[14px] font-bold text-brandSpaceCadet/40 uppercase tracking-[0.3em]">Saath Initiative System</p>
+                <div class="text-[15px] font-extrabold text-brandSpaceCadet uppercase tracking-[0.2em] bg-brandTan/30 px-7 py-2.5 rounded-full border border-brandCoffee/20 animate-pulse">
+                    Click anywhere to continue
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="main-app-layout" class="flex flex-col min-h-screen w-full invisible transform scale-95 opacity-0 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1)">
+        
+        <div id="hero-banner-container" class="w-full h-[240px] sm:h-[320px] md:h-[380px] relative border-b-4 border-brandCoffee overflow-hidden bg-brandCreamCard shadow-sm transition-all duration-500 ease-in-out">
+            <img src="image_0.png" alt="Saath Core Group and Volunteers Network Banner - 15 Students" class="w-full h-full object-cover object-top filter sepia-[0.1] saturate-[0.95] block">
+            <div class="absolute inset-0 bg-gradient-to-t from-brandCream/50 via-transparent to-black/5 pointer-events-none"></div>
+        </div>
+
+        <header class="bg-[#F4EFE6]/95 backdrop-blur-md border-b border-brandTan/30 shadow-sm sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col gap-5">
+                
+                <div class="flex items-center justify-between border-b border-brandTan/20 pb-4">
+                    <div onclick="navigateToPage('about')" class="flex items-center gap-3 cursor-pointer group">
+                        <div class="h-12 w-12 bg-brandSpaceCadet rounded-xl flex items-center justify-center text-brandCream font-extrabold text-2xl shadow-sm border border-brandTan/30 transition-transform group-hover:scale-105">
+                            S
+                        </div>
+                        <div>
+                            <span class="text-3xl font-bold tracking-tight text-brandSpaceCadet block leading-none">Saath</span>
+                            <span class="block text-[13px] uppercase tracking-widest text-brandCoffee font-bold mt-1.5">Campaign</span>
+                        </div>
+                    </div>
+                    
+                    <div id="target-navbar-logo" class="flex items-center h-12 w-36 opacity-90 filter contrast-105 rounded-xl transition-all duration-300">
+                        <div class="h-full w-full border border-dashed border-brandTan/30 rounded-xl bg-brandCream/10"></div>
+                    </div>
+                </div>
+
+                <nav class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 w-full text-base font-bold uppercase tracking-wider">
+                    <button onclick="navigateToPage('about')" id="nav-about" class="nav-panel-btn nav-panel-active px-4 py-4 text-center border border-brandCoffee rounded-xl transition-all text-brandCoffee flex items-center justify-center gap-2">
+                        <span class="text-xl leading-none">🗂️</span> Identity & Context
+                    </button>
+                    <button onclick="navigateToPage('subjects')" id="nav-subjects" class="nav-panel-btn px-4 py-4 text-center border border-brandCoffee rounded-xl transition-all text-brandCoffee/80 hover:bg-brandCoffee/10 hover:text-brandSpaceCadet flex items-center justify-center gap-2">
+                        <span class="text-xl leading-none">📚</span> Subjects
+                    </button>
+                    <button onclick="navigateToPage('impact')" id="nav-impact" class="nav-panel-btn px-4 py-4 text-center border border-brandCoffee rounded-xl transition-all text-brandCoffee/80 hover:bg-brandCoffee/10 hover:text-brandSpaceCadet flex items-center justify-center gap-2">
+                        <span class="text-xl leading-none">📈</span> Impact Matrix
+                    </button>
+                    <button onclick="navigateToPage('docs')" id="nav-docs" class="nav-panel-btn px-4 py-4 text-center border border-brandCoffee rounded-xl transition-all text-brandCoffee/80 hover:bg-brandCoffee/10 hover:text-brandSpaceCadet flex items-center justify-center gap-2">
+                        <span class="text-xl leading-none">📂</span> Documentation
+                    </button>
+                    <button onclick="navigateToPage('vision')" id="nav-vision" class="nav-panel-btn px-4 py-4 text-center border border-brandCoffee rounded-xl transition-all text-brandCoffee/80 hover:bg-brandCoffee/10 hover:text-brandSpaceCadet flex items-center justify-center gap-2 col-span-2 sm:col-span-1">
+                        <span class="text-xl leading-none">🎯</span> Vision
+                    </button>
+                </nav>
+
+            </div>
+        </header>
+
+        <main id="main-content" class="flex-grow">
+            
+            <div id="page-about" class="page-view transition-all duration-300">
+                <section class="hero-pattern text-brandSpaceCadet pt-20 pb-20 border-b border-brandTan/20 px-6 sm:px-12">
+                    <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-8 items-center">
+                        <div class="md:col-span-8 text-left space-y-5">
+                            <span class="inline-flex items-center gap-2 text-[14px] font-extrabold tracking-widest text-brandCoffee bg-brandTan/20 px-4 py-1.5 rounded-full uppercase border border-brandTan/40">
+                                <span class="h-1.5 w-1.5 rounded-full bg-brandCoffee animate-pulse"></span> Identity & Context
+                            </span>
+                            <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.12] text-brandSpaceCadet">
+                                Identity : more than just a name tag...
+                            </h1>
+                            <p class="max-w-2xl text-base sm:text-lg font-medium text-brandCoffee/80 leading-relaxed">
+                                Configuration profile dashboard detailing critical strategic blueprints, core vectors, and structural delivery frameworks.
+                            </p>
+                        </div>
+                        <div class="md:col-span-4 hidden md:block">
+                            <div class="border border-brandTan/30 bg-white p-8 rounded-2xl shadow-premium text-center space-y-3 relative">
+                                <p class="text-[13px] font-extrabold tracking-wider uppercase text-brandSlateGray">Project Designation</p>
+                                <p class="text-4xl font-black text-brandSpaceCadet tracking-tight">Saath Campaign</p>
+                                <div class="pt-4 border-t border-brandCream mt-2 text-[13px] font-bold text-brandCoffee/60 tracking-wider">
+                                    WORKSPACE DATA · 2026
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        
+                        <div class="bg-white border border-brandTan/20 rounded-3xl p-8 shadow-premium flex flex-col justify-between hover:border-brandTan transition-all">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[13px] font-extrabold uppercase tracking-widest text-brandSlateGray bg-brandCream px-2.5 py-0.5 rounded border border-brandTan/30">Registry</span>
+                                    <span class="text-xl">🏷️</span>
+                                </div>
+                                <h3 class="text-sm font-extrabold uppercase tracking-wider text-brandSlateGray">Project Alias</h3>
+                                <p class="text-xl font-bold text-brandSpaceCadet">Saath Campaign</p>
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-2 bg-white border border-brandTan/20 rounded-3xl p-8 sm:p-9 shadow-premium flex flex-col justify-between hover:border-brandTan transition-all group">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[13px] font-extrabold uppercase tracking-widest text-brandCoffee bg-brandCream px-2.5 py-0.5 rounded border border-brandTan/30">Core Agenda</span>
+                                    <span class="text-xl">🎯</span>
+                                </div>
+                                <h3 class="text-sm font-extrabold uppercase tracking-wider text-brandSlateGray">The Actual Purpose</h3>
+                                <p class="text-base sm:text-lg text-brandSpaceCadet leading-relaxed font-medium">
+                                    A tactical, youth-engineered strike on school curricula to implant actual, operational life literacy into classrooms before reality does it.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-brandTan/20 rounded-3xl p-8 shadow-premium flex flex-col justify-between hover:border-brandTan transition-all">
+                            <div class="space-y-5">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[13px] font-extrabold uppercase tracking-widest text-brandCoffee bg-brandCream px-2.5 py-0.5 rounded border border-brandTan/30">Pillars</span>
+                                    <span class="text-xl">🛡️</span>
+                                </div>
+                                <h3 class="text-sm font-extrabold uppercase tracking-wider text-brandSlateGray">Survival Vectors</h3>
+                                <div class="flex flex-wrap gap-2.5">
+                                    <span class="px-3 py-1.5 bg-brandCream text-brandSpaceCadet text-[13px] font-semibold rounded border border-brandTan/30">Financial Literacy</span>
+                                    <span class="px-3 py-1.5 bg-brandCream text-brandSpaceCadet text-[13px] font-semibold rounded border border-brandTan/30">Digital Literacy</span>
+                                    <span class="px-3 py-1.5 bg-brandCream text-brandSpaceCadet text-[13px] font-semibold rounded border border-brandTan/30">Legal Literacy</span>
+                                    <span class="px-3 py-1.5 bg-brandCream text-brandSpaceCadet text-[13px] font-semibold rounded border border-brandTan/30">Sustainability</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-2 bg-brandCreamCard/60 border border-brandTan rounded-3xl p-8 sm:p-9 shadow-sm flex flex-col md:flex-row justify-between gap-8">
+                            <div class="space-y-4 max-w-sm flex flex-col justify-between">
+                                <div class="space-y-4">
+                                    <span class="text-[13px] font-extrabold uppercase tracking-widest text-brandCoffee bg-white px-2.5 py-0.5 rounded border border-brandTan/40 w-max block">Operational Cycle</span>
+                                    <h3 class="text-sm font-extrabold uppercase tracking-wider text-brandSlateGray">The Logistics Wheel</h3>
+                                    <p class="text-base text-brandSpaceCadet font-medium leading-relaxed">
+                                        We find one brave partner school, corner a fixed group of students, and deploy a meticulous 4-session operational block monthly. No fluff.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="flex-grow flex flex-col justify-center space-y-4">
+                                <h3 class="text-sm font-extrabold uppercase tracking-wider text-brandCoffee">Target Side-Effects</h3>
+                                <div class="grid grid-cols-2 gap-3 text-center text-[13px] font-bold tracking-widest uppercase">
+                                    <div class="p-4 bg-white rounded-xl border border-brandTan/20 text-brandSpaceCadet shadow-sm flex items-center justify-center">Hyper-Aware</div>
+                                    <div class="p-4 bg-white rounded-xl border border-brandTan/20 text-brandSpaceCadet shadow-sm flex items-center justify-center">Indomitable</div>
+                                    <div class="p-4 bg-white rounded-xl border border-brandTan/20 text-brandSpaceCadet shadow-sm flex items-center justify-center">Fraud-Proof</div>
+                                    <div class="p-4 bg-white rounded-xl border border-brandTan/20 text-brandSpaceCadet shadow-sm flex items-center justify-center">Future-Ready</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+
+            <div id="page-subjects" class="page-view hidden">
+                <section class="py-16 px-6">
+                    <div class="max-w-7xl mx-auto">
+                        <div class="text-center max-w-3xl mx-auto space-y-5 mb-14">
+                            <span class="text-sm font-bold tracking-widest text-brandCoffee uppercase bg-brandTan/20 px-3 py-1 rounded-full border border-brandTan/30">Educational Blueprint</span>
+                            <h2 class="text-5xl font-bold tracking-tight text-brandSpaceCadet">The Modules We Deliver</h2>
+                            <p class="text-brandCoffee/80 text-base">Targeted paths coordinated by academic leads to introduce structural real-world literacy profiles early.</p>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8" id="subject-grid">
+                            <div class="subject-card p-7 rounded-2xl bg-white border border-brandTan/20 shadow-sm transition-all" data-category="practical">
+                                <div class="h-11 w-11 rounded-xl bg-brandCream flex items-center justify-center text-xl mb-5 font-bold border border-brandTan/20">💳</div>
+                                <h3 class="text-xl font-bold text-brandSpaceCadet mb-2">Financial Literacy</h3>
+                                <p class="text-base text-brandCoffee leading-relaxed">Essential systems of budgeting, simple computational savings models, and safe introductory resource distribution concepts.</p>
+                            </div>
+                            <div class="subject-card p-7 rounded-2xl bg-white border border-brandTan/20 shadow-sm transition-all" data-category="practical">
+                                <div class="h-11 w-11 rounded-xl bg-brandCream flex items-center justify-center text-xl mb-5 font-bold border border-brandTan/20">💻</div>
+                                <h3 class="text-xl font-bold text-brandSpaceCadet mb-2">Digital Literacy</h3>
+                                <p class="text-base text-brandCoffee leading-relaxed">Secure online discovery blueprints, digital file lifecycle structures, and local hardware optimization routines.</p>
+                            </div>
+                            <div class="subject-card p-7 rounded-2xl bg-white border border-brandTan/20 shadow-sm transition-all" data-category="practical">
+                                <div class="h-11 w-11 rounded-xl bg-brandCream flex items-center justify-center text-xl mb-5 font-bold border border-brandTan/20">🏛️</div>
+                                <h3 class="text-xl font-bold text-brandSpaceCadet mb-2">Legal Literacy</h3>
+                                <p class="text-base text-brandCoffee leading-relaxed">Introduction to constitutional safeguards, safe digital credential archiving habits, and basic civil accountability frameworks.</p>
+                            </div>
+                            <div class="subject-card p-7 rounded-2xl bg-white border border-brandTan/20 shadow-sm transition-all" data-category="practical">
+                                <div class="h-11 w-11 rounded-xl bg-brandCream flex items-center justify-center text-xl mb-5 font-bold border border-brandTan/20">🌱</div>
+                                <h3 class="text-xl font-bold text-brandSpaceCadet mb-2">Sustainability</h3>
+                                <p class="text-base text-brandCoffee leading-relaxed">Ecological footprint fundamentals, active local recycling loops, and frameworks for developing environmental responsibility profiles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="page-impact" class="page-view hidden">
+                <section class="max-w-7xl mx-auto px-6 md:px-12 py-16">
+                    <div class="bg-white border border-brandTan/20 rounded-3xl p-12 shadow-premium text-center max-w-2xl mx-auto space-y-5">
+                        <div class="text-6xl">📊</div>
+                        <h2 class="text-4xl font-bold tracking-tight text-brandSpaceCadet">Impact Matrix</h2>
+                        <p class="text-brandCoffee text-base leading-relaxed max-w-md mx-auto">
+                            The empirical framework and dataset metrics for this section are currently being updated and compiled. Please check back soon.
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            <div id="page-docs" class="page-view hidden">
+                <section class="max-w-7xl mx-auto px-6 md:px-12 py-16">
+                    <div class="bg-white border border-brandTan/20 rounded-3xl p-12 shadow-premium text-center max-w-2xl mx-auto space-y-5">
+                        <div class="text-6xl">📂</div>
+                        <h2 class="text-4xl font-bold tracking-tight text-brandSpaceCadet">Documentation</h2>
+                        <p class="text-brandCoffee text-base leading-relaxed max-w-md mx-auto">
+                            The core compliance materials, registration records, and repository frameworks are currently being reviewed. Please check back soon.
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            <div id="page-vision" class="page-view hidden">
+                <section class="max-w-6xl mx-auto px-4 sm:px-6 py-16 space-y-12">
+                    
+                    <div class="bg-brandSpaceCadet text-brandCream p-8 sm:p-10 rounded-3xl shadow-premium border border-brandTan/20 flex flex-col md:flex-row gap-8 items-center justify-between">
+                        <div class="space-y-4 max-w-3xl">
+                            <span class="text-[13px] font-extrabold uppercase tracking-[0.2em] text-brandTan bg-brandCream/10 px-3.5 py-1 rounded-full">One-Line Pitch for Principals</span>
+                            <p class="text-lg sm:text-xl font-medium leading-relaxed">
+                                "Saath is a student-led initiative that brings practical life learning in legal literacy, digital literacy, environmental responsibility, and English communication to school students through structured, activity-based sessions."
+                            </p>
+                        </div>
+                        <div class="text-sm font-bold uppercase tracking-wider text-brandTan bg-white/5 border border-brandTan/20 px-4 py-4 rounded-xl whitespace-nowrap text-center">
+                            Tone: Dignified & School-Aligned
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white border border-brandTan/20 rounded-3xl p-8 sm:p-10 shadow-premium flex flex-col justify-between relative overflow-hidden group hover:border-brandCoffee transition-all duration-300">
+                            <div class="absolute top-0 right-0 w-40 h-40 bg-brandTan/5 rounded-full blur-2xl -mr-5 -mt-5"></div>
+                            <div class="space-y-5 relative z-10">
+                                <div class="h-12 w-12 bg-brandCream border border-brandTan/30 rounded-xl flex items-center justify-center text-2xl shadow-sm">🎯</div>
+                                <h3 class="text-3xl font-extrabold text-brandSpaceCadet tracking-tight">The Vision</h3>
+                                <p class="text-base sm:text-lg text-brandCoffee/90 font-medium leading-relaxed">
+                                    Every child should know their rights, use technology safely, care for their environment, and express themselves with confidence.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border border-brandTan/20 rounded-3xl p-8 sm:p-10 shadow-premium flex flex-col justify-between relative overflow-hidden group hover:border-brandCoffee transition-all duration-300">
+                            <div class="absolute top-0 right-0 w-40 h-40 bg-brandCoffee/5 rounded-full blur-2xl -mr-5 -mt-5"></div>
+                            <div class="space-y-5 relative z-10">
+                                <div class="h-12 w-12 bg-brandCream border border-brandTan/30 rounded-xl flex items-center justify-center text-2xl shadow-sm">🚀</div>
+                                <h3 class="text-3xl font-extrabold text-brandSpaceCadet tracking-tight">The Mission</h3>
+                                <p class="text-base sm:text-lg text-brandCoffee/90 font-medium leading-relaxed">
+                                    To partner with schools and deliver practical, age-appropriate sessions in legal literacy, digital literacy, environmental responsibility, and English communication.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-brandTan/20 rounded-3xl p-8 sm:p-10 shadow-premium relative">
+                        <div class="grid md:grid-cols-12 gap-8 items-center">
+                            <div class="md:col-span-3 space-y-2">
+                                <div class="h-11 w-11 bg-brandCream border border-brandTan/30 rounded-xl flex items-center justify-center text-xl mb-2">💎</div>
+                                <h3 class="text-2xl font-bold tracking-tight text-brandSpaceCadet">The Central Aim</h3>
+                            </div>
+                            <div class="md:col-span-9 border-t md:border-t-0 md:border-l border-brandTan/20 pt-5 md:pt-0 md:pl-8">
+                                <p class="text-base sm:text-lg text-brandCoffee/90 font-medium leading-relaxed">
+                                    To empower school students with usable knowledge, confidence, and awareness that regular schooling may not fully cover.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-brandTan/20 rounded-3xl p-8 sm:p-10 shadow-premium space-y-8">
+                        <div class="border-b border-brandTan/20 pb-5">
+                            <p class="text-[13px] font-extrabold uppercase tracking-widest text-brandCoffee">Execution Matrix</p>
+                            <h3 class="text-3xl font-bold tracking-tight text-brandSpaceCadet">Primary Objectives</h3>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+                            <div class="p-6 rounded-2xl bg-brandCream border border-brandTan/20 space-y-3">
+                                <div class="text-[13px] font-extrabold text-brandCoffee uppercase tracking-wider block bg-white border border-brandTan/20 px-3 py-0.5 rounded w-max">01</div>
+                                <h4 class="text-base font-bold text-brandSpaceCadet">Build Awareness</h4>
+                            </div>
+                            <div class="p-6 rounded-2xl bg-brandCream border border-brandTan/20 space-y-3">
+                                <div class="text-[13px] font-extrabold text-brandCoffee uppercase tracking-wider block bg-white border border-brandTan/20 px-3 py-0.5 rounded w-max">02</div>
+                                <h4 class="text-base font-bold text-brandSpaceCadet">Improve Confidence</h4>
+                            </div>
+                            <div class="p-6 rounded-2xl bg-brandCream border border-brandTan/20 space-y-3">
+                                <div class="text-[13px] font-extrabold text-brandCoffee uppercase tracking-wider block bg-white border border-brandTan/20 px-3 py-0.5 rounded w-max">03</div>
+                                <h4 class="text-base font-bold text-brandSpaceCadet">Strengthen Safety Habits</h4>
+                            </div>
+                            <div class="p-6 rounded-2xl bg-brandCream border border-brandTan/20 space-y-3">
+                                <div class="text-[13px] font-extrabold text-brandCoffee uppercase tracking-wider block bg-white border border-brandTan/20 px-3 py-0.5 rounded w-max">04</div>
+                                <h4 class="text-base font-bold text-brandSpaceCadet">Improve Communication</h4>
+                            </div>
+                            <div class="p-6 rounded-2xl bg-brandCreamCard border border-brandTan space-y-3 sm:col-span-2 lg:col-span-1 shadow-sm">
+                                <div class="text-[13px] font-extrabold text-brandCream bg-brandSpaceCadet uppercase tracking-wider block px-3 py-0.5 rounded w-max">05</div>
+                                <h4 class="text-base font-extrabold text-brandSpaceCadet">Create Measurable Student Impact</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+        </main>
+
+        <footer class="border-t border-brandTan/20 bg-brandCreamCard py-10 px-6 mt-auto">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-base font-semibold text-brandCoffee">
+                <p>&copy; 2026 Saath Campaign Initiative. Configured Workspace Architecture.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const splashContainer = document.getElementById('splash-container');
+
+        // Capture original screen dimensions for initial pop-up display metrics layout frames
+        function initializeCenteredSplashLayout() {
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            
+            // Re-apply original constraints to width/height coordinates precisely matching almost the whole page frame format
+            let containerWidth = viewportWidth - (window.innerWidth < 640 ? 24 : 48); 
+            let containerHeight = viewportHeight - (window.innerWidth < 640 ? 24 : 48);
+
+            splashContainer.style.width = `${containerWidth}px`;
+            splashContainer.style.height = `${containerHeight}px`;
+            splashContainer.style.left = `${(viewportWidth - containerWidth) / 2}px`;
+            splashContainer.style.top = `${(viewportHeight - containerHeight) / 2}px`;
+        }
+
+        window.addEventListener('DOMContentLoaded', initializeCenteredSplashLayout);
+        window.addEventListener('resize', () => {
+            if (document.getElementById('splash-overlay')) {
+                initializeCenteredSplashLayout();
+            }
+        });
+
+        // Elastic flight dismiss algorithm keeping the original panel format unbroken
+        function dismissSplash(event) {
+            const splash = document.getElementById('splash-overlay');
+            const mainApp = document.getElementById('main-app-layout');
+            const targetLogo = document.getElementById('target-navbar-logo');
+            const splashCue = document.getElementById('splash-cue');
+            const ring1 = document.getElementById('ring-1');
+            const ring2 = document.getElementById('ring-2');
+            
+            if (splash.classList.contains('animating-out')) return;
+            splash.classList.add('animating-out');
+
+            // 1. Flash geometric rings outward elastically in background bounds
+            if (ring1) ring1.className = "absolute h-[60vw] w-[60vw] rounded-full border-4 border-brandTan scale-[2.5] opacity-0 transition-all duration-700 cubic-bezier(0.16, 1, 0.3, 1) pointer-events-none";
+            if (ring2) ring2.className = "absolute h-[45vw] w-[45vw] rounded-full border-2 border-brandCream scale-[3] opacity-0 transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) pointer-events-none";
+
+            // 2. Clear instructions out of bounds smoothly
+            if (splashCue) {
+                splashCue.style.opacity = '0';
+                splashCue.style.transform = 'translate(-50%, 30px)';
             }
 
-            const cards = document.querySelectorAll('.subject-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+            // 3. Make main application page materialise instantly underneath
+            mainApp.classList.remove('invisible');
+            setTimeout(() => {
+                mainApp.classList.remove('scale-95', 'opacity-0');
+                mainApp.classList.add('scale-100', 'opacity-100');
+            }, 50);
+
+            // 4. Capture precise targeted coordinates setup limits from header destination container
+            const destRect = targetLogo.getBoundingClientRect();
+
+            // 5. Morph and contract the entire original popup panel toward header logo bounds creatively
+            splashContainer.style.left = `${destRect.left}px`;
+            splashContainer.style.top = `${destRect.top}px`;
+            splashContainer.style.width = `${destRect.width}px`;
+            splashContainer.style.height = `${destRect.height}px`;
+            splashContainer.style.borderRadius = '0.75rem';
+            splashContainer.style.padding = '0px';
+            splashContainer.style.backgroundColor = 'transparent';
+            splashContainer.style.borderColor = 'transparent';
+            splashContainer.style.boxShadow = 'none';
+
+            // Clear parent overlay color instantly to optimize flying transition visibility bounds
+            splash.style.backgroundColor = 'transparent';
+            document.body.classList.remove('overflow-hidden');
+
+            // 6. Finalize handover phase sequence completely 
+            setTimeout(() => {
+                targetLogo.innerHTML = `<img src="image_bcad84.png" alt="Saath Logo" class="h-full w-full object-contain object-right filter contrast-105 hover:scale-105 transition-transform duration-300">`;
+                splash.remove();
+            }, 950);
+        }
+
+        // Configuration Routers
+        function navigateToPage(pageId) {
+            const banner = document.getElementById('hero-banner-container');
+            if (banner) {
+                banner.className = "w-full h-[120px] sm:h-[160px] md:h-[190px] relative border-b-4 border-brandCoffee overflow-hidden bg-brandCreamCard shadow-sm transition-all duration-500 ease-in-out";
+            }
+
+            const pages = document.querySelectorAll('.page-view');
+            pages.forEach(page => page.classList.add('hidden'));
+
+            const activePage = document.getElementById(`page-${pageId}`);
+            if (activePage) activePage.classList.remove('hidden');
+
+            const navButtons = document.querySelectorAll('.nav-panel-btn');
+            navButtons.forEach(btn => {
+                btn.className = "nav-panel-btn px-4 py-4 text-center border border-brandCoffee rounded-xl transition-all text-brandCoffee/80 hover:bg-brandCoffee/10 hover:text-brandSpaceCadet flex items-center justify-center gap-2";
             });
+
+            const activeBtn = document.getElementById(`nav-${pageId}`);
+            if (activeBtn) {
+                activeBtn.className = "nav-panel-btn nav-panel-active px-4 py-4 text-center border rounded-xl transition-all flex items-center justify-center gap-2";
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
